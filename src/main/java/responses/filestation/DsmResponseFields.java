@@ -1,7 +1,5 @@
 package responses.filestation;
 
-import requests.filestation.DsmRequestParameters;
-
 import java.util.List;
 
 public class DsmResponseFields {

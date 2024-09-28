@@ -58,7 +58,9 @@ public class DsmDirSizeRequest extends DsmAbstractRequest<DsmDirSizeResponse> im
     @Override
     public Response<DsmDirSizeResponse> status() {
         this.method = "status";
-        Optional.ofNullable(this.taskId).orElseThrow(() -> new DsmDirSizeException("taskId is null"));
+        if(this.taskId == null) {
+            throw new DsmDirSizeException("taskId is null");
+        }
         addParameter("taskid", this.taskId);
         return super.call();
     }
@@ -78,7 +80,9 @@ public class DsmDirSizeRequest extends DsmAbstractRequest<DsmDirSizeResponse> im
     @Override
     public Response<DsmDirSizeResponse> stop() {
         this.method = "stop";
-        Optional.ofNullable(this.taskId).orElseThrow(() -> new DsmDirSizeException("taskId is null"));
+        if(this.taskId == null) {
+            throw new DsmDirSizeException("taskId is null");
+        }
         addParameter("taskid", this.taskId);
         return super.call();
     }

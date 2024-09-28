@@ -13,7 +13,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -116,14 +117,14 @@ public abstract class DsmAbstractRequest<T> {
 
             return deserialize(resp);
         }
-        catch (IOException e) {
+        catch (IOException | URISyntaxException e) {
             throw new DsmException(e);
         }
     }
 
-    protected HttpURLConnection handleRequest(String url) throws IOException {
+    protected HttpURLConnection handleRequest(String url) throws IOException, URISyntaxException {
         LOG.debug("Calling URL: {}", url);
-        HttpURLConnection conn = (HttpURLConnection) (new URL(url)).openConnection();
+        HttpURLConnection conn = (HttpURLConnection) (new URI(url).toURL()).openConnection();
 
         conn.setRequestMethod("GET");
 

@@ -15,7 +15,7 @@ public class DsmCopyMoveResponse {
      * false, only byte sizes of the file you give in path
      * parameter is accumulated.
      */
-    private Integer processed_size;
+    private Integer processedSize;
 
     /**
      * If accurate_progress parameter is true, the
@@ -56,8 +56,8 @@ public class DsmCopyMoveResponse {
         return taskid;
     }
 
-    public Integer getProcessed_size() {
-        return processed_size;
+    public Integer getProcessedSize() {
+        return processedSize;
     }
 
     public Integer getTotal() {

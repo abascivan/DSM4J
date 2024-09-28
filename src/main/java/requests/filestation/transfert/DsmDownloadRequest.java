@@ -12,6 +12,7 @@ import utils.DsmUtils;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 /**
@@ -92,7 +93,7 @@ public class DsmDownloadRequest extends DsmAbstractRequest<DsmDownloadResponse> 
             response.setSuccess(true);
             response.setData(new DsmDownloadResponse(downloadedFile));
             return response;
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new DsmDownloadException("the file does not exist on the server");
         }
     }

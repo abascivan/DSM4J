@@ -116,7 +116,7 @@ public class DsmFileStationClient {
      * upload a file to the server
      * @param destinationPath the destination path
      * @param filePath the file to upload
-     * @param filePath the destination file name
+     * @param destinationFileName the destination file name
      * @return DsmUploadRequest
      */
     public DsmUploadRequest upload(String destinationPath, String filePath, String destinationFileName) {
@@ -130,7 +130,7 @@ public class DsmFileStationClient {
      * upload a file to the server
      * @param destinationPath the destination path
      * @param fileContent the file to upload
-     * @param filePath the destination file name
+     * @param destinationFileName the destination file name
      * @return DsmUploadRequest
      */
     public DsmUploadRequest upload(String destinationPath, InputStream fileContent, String destinationFileName) {

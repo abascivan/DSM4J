@@ -7,7 +7,6 @@ import requests.DsmAuth;
 import requests.filestation.DsmRequestParameters;
 import responses.Response;
 import responses.filestation.search.DsmSearchResultResponse;
-import responses.filestation.search.DsmSearchStartResponse;
 
 import java.util.LinkedList;
 import java.util.List;
