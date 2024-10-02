@@ -10,7 +10,6 @@ import responses.filestation.action.DsmDirSizeResponse;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 public class DsmDirSizeRequest extends DsmAbstractRequest<DsmDirSizeResponse> implements DsmNonBlockingProcess<DsmDirSizeResponse> {
     public DsmDirSizeRequest(DsmAuth auth) {

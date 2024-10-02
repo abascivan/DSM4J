@@ -102,8 +102,8 @@ public abstract class DsmAbstractRequest<T> {
             HttpURLConnection conn = handleRequest(url);
             int responseCode = conn.getResponseCode();
 
-            LOG.info("POST Response Code : {}", responseCode );
-            LOG.info("POST Response Message : {}", conn.getResponseMessage() );
+            LOG.debug("POST Response Code : {}", responseCode );
+            LOG.debug("POST Response Message : {}", conn.getResponseMessage() );
 
             StringBuilder respBuf = new StringBuilder();
             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
