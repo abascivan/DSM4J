@@ -93,4 +93,8 @@ public class DsmDownloadStationClient {
         return new DsmCreateTaskRequest(dsmAuth)
             .withUri(uri);
     }
+
+    public void task(String id) {
+        //new DsmTaskRequest();
+    }
 }

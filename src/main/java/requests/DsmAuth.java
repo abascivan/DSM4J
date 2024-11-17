@@ -26,6 +26,15 @@ public class DsmAuth {
     private String password;
     private String sid;
 
+    public DsmAuth() { }
+
+    public DsmAuth(String host, Integer port, String userName, String password) {
+        this.host = host;
+        this.port = port;
+        this.userName = userName;
+        this.password = password;
+    }
+
     public String getHost() {
         return host;
     }
@@ -129,7 +138,7 @@ public class DsmAuth {
     private static void validate(Map<String, String> properties) {
 
         String host = properties.get(HOST_KEY) != null && !properties.get(HOST_KEY).isEmpty() ? properties.get(HOST_KEY) : null;
-        Integer port = properties.get(PORT_KEY) != null && !properties.get(PORT_KEY).isEmpty() ? Integer.valueOf(Optional.ofNullable(properties.get(PORT_KEY)).orElse(null)) : null;
+        Integer port = properties.get(PORT_KEY) != null && !properties.get(PORT_KEY).isEmpty() ? Integer.valueOf(properties.get(PORT_KEY)) : null;
         String userName = properties.get(USERNAME_KEY) != null && !properties.get(USERNAME_KEY).isEmpty() ? properties.get(USERNAME_KEY) : null;
         String password = properties.get(PASSWORD_KEY) != null && !properties.get(PASSWORD_KEY).isEmpty() ? properties.get(PASSWORD_KEY) : null;
 
